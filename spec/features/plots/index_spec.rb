@@ -56,10 +56,10 @@ RSpec.describe Plot do
 
     visit '/plots'
 
-    expect(page).to have_content("Plant")
-    expect(page).to have_link("remove plant")
+    expect(page).to have_content("Ted")
+    expect(page).to have_link("remove #{plant_1.name}")
 
-    click_on "romove plant"
+    click_on "remove #{plant_1.name}"
 
     expect(current_path).to eq('/plants')
     expect(page).not_to have_content(plant_1.name)
